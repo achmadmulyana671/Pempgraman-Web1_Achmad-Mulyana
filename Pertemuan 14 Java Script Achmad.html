@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh JavaScript dalam HTML</title>
+  <script>
+    // Ini adalah kode JavaScript
+    function greet() {
+      var name = document.getElementById("name").value;
+      var greeting = "Halo, " + name + "!";
+      document.getElementById("result").innerHTML = greeting;
+    }
+  </script>
+</head>
+<body>
+
+<h1>Selamat Datang</h1>
+
+<p>ACHMAD MULYANA</p>
+<p>05TPLE009</p>
+<p>PEMROGRAMAN WEB 1</p>
+<input type="text" id="name">
+<button onclick="greet()">Sapa</button>
+
+<p id="result"></p>
+
+</body>
+</html>
