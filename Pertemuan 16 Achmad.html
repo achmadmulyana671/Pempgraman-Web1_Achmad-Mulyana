@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+        h1 { 
+          color:rgb(237, 139, 100);
+          text-align:center;
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 { 
+        color:rgb(0, 8, 4);
+        text-align:center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: small;
+        }
+
+        h3 { 
+        color:rgb(0, 8, 4);
+        text-align:center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: small;
+        }
+
+        body {
+          background-color:rgb(255, 240, 127);
+        }
+      </style>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <p><h2>MASUKKAN NILAI I:
+    <input type="number" id="nilai1" name="nilai1">
+    <select id="operasi" name="operasi">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    MASUKKAN NILAI II:
+    <input type="number" id="nilai2" name="nilai2">
+    <button onclick="hitung()">Submit</button></p></h2> 
+
+    <h3> HASILNYA: <input type="number" id="hasil" name="hasil" readonly></h3>
+    <script>
+        function hitung() {
+            var nilai1 = parseFloat(document.getElementById("nilai1").value);
+            var nilai2 = parseFloat(document.getElementById("nilai2").value);
+            var operasi = document.getElementById("operasi").value;
+            var hasil = 0;
+
+            switch (operasi) {
+                case "+":
+                    hasil = nilai1 + nilai2;
+                    break;
+                case "-":
+                    hasil = nilai1 - nilai2;
+                    break;
+                case "*":
+                    hasil = nilai1 * nilai2;
+                    break;
+                case "/":
+                    if (nilai2 != 0) {
+                        hasil = nilai1 / nilai2;
+                    } else {
+                        alert("Pembagian dengan nol tidak diizinkan");
+                    }
+                    break;
+            }
+
+            document.getElementById("hasil").value = hasil;
+        }
+    </script>
+</body>
+</html>
